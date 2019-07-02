@@ -1,0 +1,26 @@
+//1)
+let line = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+line.push("Mary");
+let searchOne = "Josh";
+let searchTwo = "Emily";
+
+function find(person) {
+  for(let i = 0; i < line.length; i++) {
+    if (line[i] === person) {
+      return console.log("Person Found Index = " + i);
+   	 } if (i == line.length-1) {
+       return console.log('Person Not Found');
+     };
+    };
+  };
+find(searchOne);
+find(searchTwo);
+line.splice(1,0,"Melissa");
+line.splice(4,1);
+console.log(line);
+
+/*
+2) A row of books at a library would be a good example of a data structure. All the books needs to be kept in order and the exact location should always be known. 
+
+3) The easiest way to access this type of structure would be to search for part of the string or title of the book. Once this is know you can grab its location in the array and make the changes as needed. 
+*/
