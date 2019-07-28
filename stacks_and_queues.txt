@@ -1,0 +1,77 @@
+/*
+1) A stack data structure allows for the last element that was added
+to be the first element that's processed and returned (LIFO). A queue prcesses 
+and returns elements in the order which they were received (FIFO). 
+
+2) Stacks and queues are both data structure types that prioritize elements to
+be processed in a specific order
+
+3) For un UNDO and REDO function you would want to use a stack data structure.
+This would allow for the last edit made to be easily taken back off the 
+previous elements added. 
+*/
+
+function reverse(str){
+    let reversed = "";    
+    
+  for (var i = str.length - 1; i >= 0; i--){        
+      reversed += str[i];
+    }    
+    return reversed;
+  }
+  
+  console.log(reverse('IMMA STRING')); // returns GNIRTS AMMI
+
+class Stack {
+  constructor(){
+   this.pop = function(que){
+     var Queue = [];
+     var Remove = [];
+       
+     for(var i=0;i<que.length; i++){
+       if(i===que.length-1){
+         Remove.push(que[i]);
+       }else{
+         Queue.push(que[i]);
+       }
+     }
+       return Remove;          
+     }
+   }
+}
+
+class Queue {
+   constructor(){
+     this.elements = [];
+   }
+  
+ //enqueue
+  enqueue(element)
+	{    
+    this.elements.push(element);
+	}
+
+  //dequeue
+  dequeue()
+	{
+    if(this.isEmpty())
+        return "Empty";
+    return this.elements.shift();
+	}
+  
+	isEmpty()
+	{
+    return this.elements.length === 0;
+	}
+}
+
+var queue = new Queue();
+
+queue.enqueue('M')
+queue.enqueue(5)
+console.log(queue)
+queue.dequeue()
+console.log(queue)
+
+var stack = new Stack();
+console.log(stack.pop('test'))
