@@ -10,17 +10,25 @@ be processed in a specific order
 This would allow for the last edit made to be easily taken back off the 
 previous elements added. 
 */
-
-function reverse(str){
-    let reversed = "";    
-    
-  for (var i = str.length - 1; i >= 0; i--){        
-      reversed += str[i];
-    }    
-    return reversed;
-  }
   
-  console.log(reverse('IMMA STRING')); // returns GNIRTS AMMI
+function reverse(str){
+  var stack = [];
+  var reversed = [];
+  
+  for(var character in str){
+    stack.push(str.charAt(character));
+  }
+
+  while(!stack.length == 0 || !stack == undefined){
+    temp = stack.pop();
+    reversed.push(temp);
+  }
+
+  return reversed;
+}
+
+console.log(reverse("Bloc!")); //returns [ '!', 'c', 'o', 'l', 'B' ]
+
 
 class Stack {
   constructor(){
